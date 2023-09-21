@@ -7,7 +7,7 @@ sequenceDiagram
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
-    server->>server: Processing POST Data
+    server->>server: Processing POST Data and saving the new note
     server->>browser: HTTP Redirect Response /exampleapp/notes
     deactivate server
     
