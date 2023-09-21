@@ -37,3 +37,35 @@ sequenceDiagram
 
 
 ```
+
+# Exercise 0.5
+
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate server
+    server-->>browser: the spa.js file
+    deactivate server
+
+    browser->>browser: Running the JavaScript file which will then get the data.json
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: json containing the notes returned by the server
+    deactivate server
+
+    browser->>browser: Executing JavaScript which creates the content for the page
+
+    Note right of browser: The browser executes the callback function that renders the notes 
+
+```
+
