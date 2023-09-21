@@ -26,7 +26,7 @@ sequenceDiagram
     server-->>browser: the JavaScript file
     deactivate server
 
-    browser-->browser: Executing JavaScript code that fetches the JSON from the server   
+    browser->>browser: Executing JavaScript code that fetches the JSON from the server   
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
     server-->>browser: [{ "content": "", "date": "2023-09-21T15:40:58.922Z" }, ... ]
